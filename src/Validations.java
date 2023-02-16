@@ -6,6 +6,6 @@ public class Validations {
     }
 
     public static boolean isString (String string){
-        return numero.matches("[a-zA-Z]*");
+        return string.matches("[a-zA-Z]*");
     }
 }
