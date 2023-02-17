@@ -12,10 +12,17 @@ public class Validations {
 
     /**
      * Metodo para validación de cadena de caracteres alfabéticos solamente
-     * @param string
+     * @param cadena
      * @return boolean
      */
-    public static boolean isString (String string){
-        return string.matches("[a-zA-Z]*");
+    public static boolean isString (String cadena){
+        return cadena.matches("[a-zA-Z]*");
     }
+/*
+    public static boolean isMail (String cadena){
+        return cadena.matches("");
+    }
+    */
 }
+
+
