@@ -1,37 +1,34 @@
 public class Ejercicio_Tema_9 {
     public static void main(String[] args) {
-       Auto coche = new Auto(200,"SAS","rum run");
-       System.out.println("Coche: "+coche.getSonido());
+       Auto coche = new Auto();
+       coche.setSonido("Brr");
 
-       CocheElectrico nuevoCe = new CocheElectrico(256,"asd","sdf");
-       System.out.println("El coche electrico tiene la patente: "+nuevoCe.getMatricula());
+       Moto moto = new Moto();
+       moto.setSonido("brum rum");
 
-       System.out.println(coche.compruebaMatricula("xxx"));
+       System.out.println(coche.getSonido());
+       System.out.println(moto.getSonido());
+       //System.out.println("Coche: "+coche.getSonido());
+
+       //CocheElectrico nuevoCe = new CocheElectrico(256,"asd","sdf");
+       //System.out.println("El coche electrico tiene la patente: "+nuevoCe.getMatricula());
+
+       //System.out.println(coche.compruebaMatricula("xxx"));
     }
 }
 
-class Vehiculo {
+
+abstract class Vehiculo {
     int velMaxima;
     String matricula;
    String sonido;
-    public Vehiculo(int velMaxima, String matricula, String sonido) {
-        this.velMaxima = velMaxima;
-        this.matricula = matricula;
-        this.sonido = sonido;
+    public Vehiculo() {
+        System.out.println("Constructor de Vehiculo");
     }
 
-    public boolean compruebaMatricula (String matricula){
-        return matricula.toUpperCase() == "XXX";
-    }
-    //System.out.println("Dentro del consturctor del vehiculo");
-
-    public int getVelMaxima() {
-        return velMaxima;
-    }
-    public void setVelMaxima(int velMaxima) {
-        this.velMaxima = velMaxima;
-    }
-
+    abstract public String getSonido();
+    abstract public void setSonido(String sonido);
+/*
     public String getMatricula() {
         return matricula;
     }
@@ -45,19 +42,26 @@ class Vehiculo {
     public void setSonido(String sonido) {
         this.sonido = sonido;
     }
-
+*/
 
 
 }
 
 class Auto extends Vehiculo {
-    public Auto(int velMaxima, String matricula, String sonido) {
-        super(velMaxima, matricula, sonido);
+
+    public void setSonido(String sonido){
+        this.sonido = sonido;
+    }
+    public String getSonido(){
+        return "Soy sonido de auto " + this.sonido;
     }
 }
 
-class CocheElectrico extends Vehiculo{
-    public CocheElectrico(int velMaxima, String matricula, String sonido) {
-        super(velMaxima, matricula, sonido);
+class Moto extends Vehiculo{
+    public void setSonido(String sonido){
+        this.sonido = sonido;
+    }
+    public String getSonido(){
+        return "Soy sonido de moto " + this.sonido;
     }
 }
