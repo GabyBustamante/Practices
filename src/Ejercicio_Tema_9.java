@@ -6,6 +6,7 @@ public class Ejercicio_Tema_9 {
        CocheElectrico nuevoCe = new CocheElectrico(256,"asd","sdf");
        System.out.println("El coche electrico tiene la patente: "+nuevoCe.getMatricula());
 
+       System.out.println(coche.compruebaMatricula("xxx"));
     }
 }
 
@@ -20,10 +21,7 @@ class Vehiculo {
     }
 
     public boolean compruebaMatricula (String matricula){
-        if (matricula.toUpperCase() == "XXX"){
-            return true;
-        }
-            return false;
+        return matricula.toUpperCase() == "XXX";
     }
     //System.out.println("Dentro del consturctor del vehiculo");
 
